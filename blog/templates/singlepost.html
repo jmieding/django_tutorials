@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A Bootstrap Blog Template">
+    <meta name="author" content="James Mieding">
+    <title>Singlepost</title>
+ 
+    <!-- Bootstrap CSS file -->
+    <link href="bootstrap-3.3.4-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="bootstrap-3.3.4-dist/css/bootstrap-theme.min.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- Jquery and Bootstrap Script files -->
+    <script src="jquery-2.1.4.min.js"></script>
+    <script src="bootstrap-3.3.4-dist/js/bootstrap.min.js"></script>
+</body>
+
+<link rel="stylesheet" type="text/css" href="style.css"/>
+
+<body>
+    <header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle" type="button" data-toggle="collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="index.html" class="navbar-brand">James Mieding</a>
+            </div>                  
+            <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+            	<form class="navbar-form navbar-right" role="search">
+                	<div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search">
+                  </div>
+                  <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+ 
+    <div id="body" class="container">   
+    	<div class="row">
+    		
+    		<div class="col-md-8">
+    			<h1>Latest Posts</h1>
+    			<article>
+    				<h2><a href="singlepost.html">Post Title</a></h2>
+ 
+    				<div class="row">
+        				<div class="group1 col-sm-6 col-md-6">
+            				<span class="glyphicon glyphicon-folder-open"></span>  <a href="#">Category</a>
+                     			<span class="glyphicon glyphicon-bookmark"></span> <a href="#">Tag #1</a>, 
+                				<a href="#">Tag #2</a>, <a href="#">Tag #3</a>
+        				</div>
+        				<div class="group2 col-sm-6 col-md-6">
+                			<span class="glyphicon glyphicon-pencil"></span> <a href="singlepost.html#comments">## Comments</a>                             
+                  				<span class="glyphicon glyphicon-time"></span> Post Date, 2015                       
+        				</div>
+    				</div>
+ 
+    				<hr>
+ 
+    				<img src="/Users/jamesmieding/desktop/desktop pics/t8fzxkJ.jpg/" class="img-responsive">
+ 
+    				<br />
+ 
+    				<p class="lead"> This is a post Headline.</p>
+ 
+    				<p> This is a Post text Body.This is a Post text Body.This is a Post text Body.This is a Post text Body.This is a Post text Body.This is a Post text Body.This is a Post text Body.This is a Post text Body.This is a Post text Body.This is a Post text Body.This is a Post text Body.This is a Post text Body.This is a Post text Body.This is a Post text Body.</p>
+ 				
+ 				<!---Comment Form--->
+    				<div class="well">
+    					<h4>Leave a comment</h4>
+    					<form role="form" class="clearfix">
+        				
+        				<div class="col-md-6 form-group">
+            				<label class="sr-only" for="name">Name</label>
+            				<input type="text" class="form-control" id="name" placeholder="Name">
+        				</div>
+ 
+        				<div class="col-md-6 form-group">
+            				<label class="sr-only" for="email">Email</label>
+            				<input type="email" class="form-control" id="email" placeholder="Email">
+        				</div>
+ 
+        				<div class="col-md-12 form-group">
+            				<label class="sr-only" for="email">Comment</label>
+            				<textarea class="form-control" id="comment" placeholder="Comment"></textarea>
+        				</div>
+ 					
+       					<div class="col-md-12 form-group text-right">
+            				<button type="submit" class="btn btn-primary">Submit</button>
+        				</div>
+    					</form>   
+    					  
+    				<!---Comment Output--->
+    					<ul id="comments" class="comments">
+    						<li class="comment">
+        						<div class="clearfix">
+            						<h4 class="pull-left">Username</h4>
+            						<p class="pull-right">Time of comment</p>
+        						</div>
+        						<p>
+            						<em>Text of comment here.</em>
+        						</p>
+    						</li>
+    						
+    						<li class="comment clearfix">
+        						<div class="clearfix">
+            						<h4 class="pull-left">John</h4>
+            						<p class="pull-right">9:41 PM on August 24, 2013</p>
+        						</div>
+        						<p>
+            						<em>I don't believe in astrology but still your writing style is really great!</em>
+        						</p>
+    						</li>
+						</ul>              
+					</div>
+ 
+    				<hr/>
+				</article>
+				
+			<!---Pager--->
+				<ul class="pager"> 
+    				<li class="previous"><a href="index.html"><--Back to home</a></li> 
+				</ul>
+    		</div>
+    		
+    		
+    		
+    
+    		<!---Widgets--->
+    		
+    		<div class="col-md-4">
+    		    <div class="well text-center">
+    		    	<p class="lead">
+    		    		Click here if you want a list of posts mailed to you once-a-month.
+    		    	</p>
+    		    	<button class="btn btn-primary">Subscribe!</button>
+    		    </div>
+    		    
+    		    <div class="panel panel-default"> 
+    				<div class="panel-heading"> 
+        				<h3 class="panel-title">Latest Posts</h3> 
+    				</div>
+    				<ul class="list-group">
+    					<li class="list-group-item"><a href="singlepost.html">1. Post No. 1</a></li>
+        				<li class="list-group-item"><a href="singlepost.html">2. Post No. 2</a></li>
+        				<li class="list-group-item"><a href="singlepost.html">3. Post No. 3</a></li>
+        				<li class="list-group-item"><a href="singlepost.html">4. Post No. 4</a></li>
+        				<li class="list-group-item"><a href="singlepost.html">5. Post No. 5</a></li>
+    				</ul>
+				</div>
+				
+				<div class="panel panel-default">
+    				<div class="panel-heading">
+        				<h4>Categories</h4>
+    				</div>
+    				<ul class="list-group">
+        				<li class="list-group-item"><a href="#">Python</a></li>
+        				<li class="list-group-item"><a href="#">Career Transition</a></li>
+        				<li class="list-group-item"><a href="#">Startups</a></li>
+        				<li class="list-group-item"><a href="#">Resources</a></li>
+        				<li class="list-group-item"><a href="#">Category1</a></li>
+    				</ul>
+				</div>
+ 
+ 			
+				<div class="panel panel-default">
+    				<div class="panel-heading">
+        				<h4>Recent Comments</h4>
+    				</div>
+    				<ul class="list-group">
+        				<li class="list-group-item"><a href="#">Comment! - <em>name of person</em></a></li>
+        				<li class="list-group-item"><a href="#">Comment! - <em>name of person</em></a></li>
+        				<li class="list-group-item"><a href="#">Comment! - <em>name of person</em></a></li>
+        				<li class="list-group-item"><a href="#">Comment! - <em>name of person</em></a></li>
+    				</ul>
+				</div> 
+				
+				<div class="panel panel-default">
+    				<div class="panel-heading">
+        				<h4>Tags</h4>
+    				</div>
+    				<div class="panel-body">
+        				<ul class="list-inline">
+            				<li><a href="#">Python</a></li>
+            				<li><a href="#">Bootstrap 3</a></li>
+            				<li><a href="#">Django 1.7</a></li>
+            				<li><a href="#">Tag4</a></li>
+            				<li><a href="#">Tag5</a></li>
+            				<li><a href="#">Tag6</a></li>
+            				<li><a href="#">Tag7</a></li>
+            				<li><a href="#">Tag 8</a></li>
+            				<li><a href="#">Tag 9</a></li>
+            				<li><a href="#">Tag 10</a></li>
+        				</ul>
+    				</div>
+				</div>
+				
+    		</div>
+    	</div>
+ 
+ <!---Footer--->
+    <footer>
+        
+        <div class="container">
+        	<hr />
+        	<p class="text-center">Copyright © James Mieding 2015. All rights reserved.</p>
+    	</div>
+
+    </footer>
+</body>
+</html>
+	
+	
+	
+
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The Personal Blog of James Mieding">
+  <meta name="author" content="James Mieding">
+  <title>Home</title>
+ 
+							<!-- CSS/Javascript files -->
+  {% load staticfiles %}
+  <link href="{% static 'bootstrap-3.3.4-dist/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css"  />
+  <link href="{% static 'style.css' %}" rel="stylesheet" type="text/css" />
+    
+  <!--<script type="text/javascript" src="/Users/jamesmieding/Desktop/Code/BlogFrontEnd/script.js"></script>-->
+ <script type="text/javascript" src="jquery-2.1.4.min.js"></script>
+ <script type="text/javascript" src="bootstrap-3.3.4-dist/js/bootstrap.min.js"></script>
+</head>
+
+
+<body>
+	
+							<!--Header Image-->
+<header class="intro-header">
+
+  <div><a href="#">JamesMieding.com</a></div>
+  <div class=" {% static "header_pic" %}">
+    <img src=" {% static "blog_pics/books_beer.jpg" %}" />
+  </div>
+
+</header>
+
+
+	<!--<div class="container-fluid">
+    	<div class="row">
+        	<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">    
+        		<div class="site-heading">
+            		<h1>The Personal Blog of James Mieding</h1>
+            		<hr class="small">
+            		<span class="subheading">A Clean Blog Theme by Start Bootstrap</span>
+        		</div>
+    		</div>-->
+
+							<!---Navigation-->
+							
+<nav class="navbar" role="navigation">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex1-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+  </div>
+  <div class="collapse navbar-collapse" id="navbar-ex1-collapse">
+    <ul class="nav navbar-nav">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li class="dropdown"> 
+	    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" 										aria-expanded="false">Portfolio<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#" title="x">Action</a></li>
+          <li><a href="#">Another action</a></li>
+          <li><a href="#" title="x">Something else here</a></li>
+          <li role="separator" class="divider"></li>
+          <li><a href="#">Separated link</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+							<!-- MAIN CONTENT -->
+<div class="container">
+  <div class="row background">   
+  <div class="col-xs-10 col-xs-offset-1 col-sm-7 col-sm-offset-1">
+  
+	<!--Post Content-->
+	
+	<article>
+	
+	  <!--Post Header-->
+	  
+	<div>
+		<p class="post-heading">
+        <a href="singlepost.html">Some Thoughts on Minimalism</a>
+        </p>
+        <hr>
+        
+    <!--Post Information-->
+      
+        <div class="row">
+          <div class="col-sm-12 col-md-12">
+            <p class="text-body">July 12, 2015 | Categories: XXX | Tags: </p>
+    	  </div>
+    	</div>
+    	<hr>
+    </div>
+      
+      
+    	
+      <!--Post Image-->
+ 
+    	<img src="/Users/jamesmieding/desktop/BlogFrontEnd/blog_pics/MtKhatadin.jpg" class="image-posts" align="left">
+    	<br/>
+    	
+      <!--Post Body-->
+ 
+    	<p class="text-body"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam at faucibus purus, ut volutpat ligula. Mauris bibendum enim at justo rhoncus placerat eu eget eros. Sed mi erat, lacinia ac ullamcorper nec, fermentum nec ex. Nullam eget mauris iaculis magna placerat rhoncus. In quis ipsum magna. Morbi pretium malesuada risus, commodo volutpat dui imperdiet eget. Vestibulum et felis nunc. Nam sed sapien sit amet libero dictum laoreet.
+
+</br></br>Praesent metus ligula, tempor vel risus eget, molestie gravida purus. Nullam blandit interdum tempor. Suspendisse iaculis orci eleifend leo ornare pellentesque. Nunc ultricies orci eget orci porta, at varius erat placerat. Integer pharetra eu ex non rhoncus. Sed feugiat justo ac luctus interdum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Curabitur vestibulum id lectus eget suscipit. Proin volutpat nulla ac sem lacinia bibendum. Sed congue nec nibh ac suscipit. Pellentesque elementum dictum ligula feugiat accumsan. Morbi finibus sed nunc vel vulputate. Nulla suscipit ultricies dui non venenatis. Praesent dictum erat vitae magna ullamcorper, vitae aliquet libero maximus. Sed ultricies elit diam, sit amet feugiat ex egestas id. Phasellus semper mi mollis porta posuere.
+
+</br></br>Morbi non ultrices risus. Suspendisse potenti. Aliquam vitae libero mattis, auctor orci eu, hendrerit neque. Duis varius mauris et sem euismod, quis sagittis velit tincidunt. Integer at ultricies nibh, nec convallis lectus. Pellentesque tincidunt, lacus sit amet tincidunt sollicitudin, lectus sapien luctus dui, vestibulum congue erat ipsum dignissim dolor. Pellentesque vulputate enim nec est porttitor, porta sollicitudin purus lobortis. Nulla vestibulum non risus at semper. Fusce porttitor justo orci, in hendrerit urna eleifend ut. Ut ut magna sed dolor ullamcorper euismod.
+
+</br></br>Etiam lacinia nisl at ante ullamcorper mattis. Quisque ac ex odio. Vivamus ultricies, ex eu pellentesque ullamcorper, nulla lectus hendrerit enim, non feugiat felis sem vitae metus. Aenean id tortor eu quam cursus pharetra in sit amet ipsum. Nam pharetra eros nec elit pulvinar, eget rutrum justo rutrum. Integer vitae ullamcorper orci. Suspendisse ut magna dictum, eleifend lorem et, commodo purus. Phasellus vel odio vulputate, congue augue ac, sagittis erat. Aliquam eu mi non nisl imperdiet semper eu at velit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sed risus ac lectus venenatis sodales euismod sed nibh. Morbi ultrices malesuada dolor sit amet imperdiet. Mauris lobortis augue vel rutrum semper. Mauris rutrum leo orci, in iaculis mauris ullamcorper ut. Morbi dui felis, pulvinar volutpat massa et, viverra viverra elit.
+		</p>
+    </article>
+	
+	<article>
+	
+	  <!--Post Header-->
+	  
+	<div>
+		<p class="post-heading">
+        <a href="singlepost.html">Some Thoughts on Minimalism</a>
+        </p>
+        <hr>
+        
+    <!--Post Information-->
+      
+        <div class="row">
+          <div class="col-sm-12 col-md-12">
+            <p class="text-body">July 12, 2015 | Categories: XXX | Tags: </p>
+    	  </div>
+    	</div>
+    	<hr>
+    </div>
+      
+      
+    	
+      <!--Post Image-->
+ 
+    	<img src="/Users/jamesmieding/desktop/BlogFrontEnd/blog_pics/MtKhatadin.jpg" class="image-posts" align="left">
+    	<br/>
+    	
+      <!--Post Body-->
+ 
+    	<p class="text-body"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam at faucibus purus, ut volutpat ligula. Mauris bibendum enim at justo rhoncus placerat eu eget eros. Sed mi erat, lacinia ac ullamcorper nec, fermentum nec ex. Nullam eget mauris iaculis magna placerat rhoncus. In quis ipsum magna. Morbi pretium malesuada risus, commodo volutpat dui imperdiet eget. Vestibulum et felis nunc. Nam sed sapien sit amet libero dictum laoreet.
+
+</br></br>Praesent metus ligula, tempor vel risus eget, molestie gravida purus. Nullam blandit interdum tempor. Suspendisse iaculis orci eleifend leo ornare pellentesque. Nunc ultricies orci eget orci porta, at varius erat placerat. Integer pharetra eu ex non rhoncus. Sed feugiat justo ac luctus interdum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Curabitur vestibulum id lectus eget suscipit. Proin volutpat nulla ac sem lacinia bibendum. Sed congue nec nibh ac suscipit. Pellentesque elementum dictum ligula feugiat accumsan. Morbi finibus sed nunc vel vulputate. Nulla suscipit ultricies dui non venenatis. Praesent dictum erat vitae magna ullamcorper, vitae aliquet libero maximus. Sed ultricies elit diam, sit amet feugiat ex egestas id. Phasellus semper mi mollis porta posuere.
+
+</br></br>Morbi non ultrices risus. Suspendisse potenti. Aliquam vitae libero mattis, auctor orci eu, hendrerit neque. Duis varius mauris et sem euismod, quis sagittis velit tincidunt. Integer at ultricies nibh, nec convallis lectus. Pellentesque tincidunt, lacus sit amet tincidunt sollicitudin, lectus sapien luctus dui, vestibulum congue erat ipsum dignissim dolor. Pellentesque vulputate enim nec est porttitor, porta sollicitudin purus lobortis. Nulla vestibulum non risus at semper. Fusce porttitor justo orci, in hendrerit urna eleifend ut. Ut ut magna sed dolor ullamcorper euismod.
+
+</br></br>Etiam lacinia nisl at ante ullamcorper mattis. Quisque ac ex odio. Vivamus ultricies, ex eu pellentesque ullamcorper, nulla lectus hendrerit enim, non feugiat felis sem vitae metus. Aenean id tortor eu quam cursus pharetra in sit amet ipsum. Nam pharetra eros nec elit pulvinar, eget rutrum justo rutrum. Integer vitae ullamcorper orci. Suspendisse ut magna dictum, eleifend lorem et, commodo purus. Phasellus vel odio vulputate, congue augue ac, sagittis erat. Aliquam eu mi non nisl imperdiet semper eu at velit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sed risus ac lectus venenatis sodales euismod sed nibh. Morbi ultrices malesuada dolor sit amet imperdiet. Mauris lobortis augue vel rutrum semper. Mauris rutrum leo orci, in iaculis mauris ullamcorper ut. Morbi dui felis, pulvinar volutpat massa et, viverra viverra elit.
+		</p>
+    </article>
+	
+	
+	
+	<!--Pager-->
+		
+  <div class="pager-bottom">
+    <ul class="pager"> 
+      <li class="next"><a href="#">Older Posts</a></li> 
+	</ul>
+  </div>
+  </div>
+	
+	<!-- SIDEBAR -->
+
+  <div class="col-sm-3 col-sm-offset-1 col-md-3 col-md-offset-1 sidebar-border">
+    
+    <!--About Me-->
+    
+        <!--<div class="col-sm-12 col-md-12">-->
+      	  <img src="/Users/jamesmieding/desktop/BlogFrontEnd/blog_pics/Profile1.jpg" class="text-wrap"><p>Hiker, Rails Developer, Practitioner of the Oxford Comma.</p>
+    	
+    	
+    <!--Recent Posts-->
+    	
+    	<div class="sidebar">
+          <div class="panel-heading">
+            <h4 class="sidebar-heading">Recent Posts</h4> 
+          </div>
+    	  
+    	  <ul class="list-group transparent">
+    	    <li class="list-group-item transparent"><a href="singlepost.html">1. Post No. 1</a></li>
+            <li class="list-group-item transparent"><a href="singlepost.html">2. Post No. 2</a></li>
+            <li class="list-group-item transparent"><a href="singlepost.html">3. Post No. 3</a></li>
+            <li class="list-group-item transparent"><a href="singlepost.html">4. Post No. 4</a></li>
+            <li class="list-group-item transparent"><a href="singlepost.html">5. Post No. 5</a></li>
+    	  </ul>
+    	</div>
+        		
+	<!--Categories-->
+	
+		<div class="sidebar">
+    	  <div class="panel-heading">
+            <h4 class="sidebar-heading">Categories</h4>
+    	  </div>
+    				
+    	  <ul class="list-group transparent">
+            <li class="list-group-item transparent"><a href="#">Python</a></li>
+        	<li class="list-group-item transparent"><a href="#">Career Transition</a></li>
+        	<li class="list-group-item transparent"><a href="#">Startups</a></li>
+        	<li class="list-group-item transparent"><a href="#">Resources</a></li>
+        	<li class="list-group-item transparent"><a href="#">Category1</a></li>
+    	  </ul>
+		</div>
+  </div>	
+</div>
+</div>			
+
+
+	
+<!--Footer-->
+
+
+  <div class="container-fluid footer">
+    <hr />
+    <p class="text-center text-body">Copyright © James Mieding 2015. All rights reserved.</p>
+  </div>
+</body>
+</html>
