@@ -1,0 +1,45 @@
+{% extends 'articles/base.html' %}
+
+{% block main %}
+
+<h1>Index</h1>
+
+<article>
+{% for post in posts %}
+    
+  <div>
+    <!-- Post Title -->
+    <p class="post-heading">
+      <a href="{% url 'detail' post.slug %}">{{post.title}}</a>
+    </p>
+    <hr>
+
+    <!--Post Information-->
+    <div class="row">
+      <div class="col-sm-12 col-md-12">
+        <p class="text-info">{{post.published_date |date:"N d, Y" }} | Categories: <a href="#">XXX</a></p>
+      </div>
+    </div>
+    <hr>
+
+    <!--Post Body-->
+    <p class="text-body">
+      {{ post.text | safe | truncatewords_html:20}}
+    </p>
+    <a href="{% url 'detail' post.slug %}"><button class="btn">More</button></a>
+
+  </br></br>
+  </div>
+
+{% endfor %}
+</article>
+
+<!-- Pager -->
+    
+  <div class="pager-bottom">
+    <ul class="pager"> 
+      <li class="next"><a href="{% url 'index_all' %}">Older Articles</a></li> 
+    </ul>
+  </div>
+
+{% endblock %}

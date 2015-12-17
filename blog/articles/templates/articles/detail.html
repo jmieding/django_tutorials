@@ -1,0 +1,49 @@
+{% extends 'articles/base.html' %}
+
+{% block main %}
+    
+    <!--Post Header-->
+  <article>
+    
+    <div>
+      <!-- Post Title -->
+      <p class="post-heading">
+        <a href="/articles/{{ post.slug }}/">{{post.title}}</a>
+      </p>
+      <hr>
+      
+      <!--Post Information-->
+      <div class="row">
+        <div class="col-sm-12 col-md-12">
+          <p class="text-info">{{post.published_date |date:"N d, Y" }} | Categories: <a href="#">XXX</a></p>
+        </div>
+      </div>
+      <hr>
+    </div>
+
+  <!--Post Body-->
+  <p class="text-body">{{post.text | safe}}</p>
+  
+  <div id="comments">
+  <form>
+    Your Name:
+    </br>
+    <input type="text" name="name" size="20" action="" required></input>
+    </br>
+  </br>
+    Your Email (just to make sure you're a real person):
+    </br>
+    <input type="text" name="email" size="20" action="" required></input>
+    </br>
+    </br>
+    Comment:
+    </br>
+    <textarea name="comment-text" cols="40" rows="6"></textarea>
+    <!-- <input type="text" name="comment-text" action="" required></input> -->
+    </br>
+    <input type="submit" value="Submit Comment"></input>
+  </form>
+  </div>
+  </article>
+
+{% endblock %}
