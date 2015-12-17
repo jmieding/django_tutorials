@@ -31,14 +31,19 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = (
-    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'blog',
+    'articles',
+    'tinymce',
+    'django.contrib.sites',
+    'django.contrib.flatpages',
+    'django.contrib.admin',
 )
+
+SITE_ID = 1
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -56,7 +61,7 @@ ROOT_URLCONF = 'blog.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -99,5 +104,27 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
+STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
 
 STATIC_URL = '/static/'
+
+STATIC_ROOT = os.path.join(BASE_DIR, "static_root")
+
+# TINYMCE_JS_ROOT = os.path.join(BASE_DIR, '/tinymce/')
+
+# TINYMCE_JS_URL = os.path.join(BASE_DIR, '/tinymce/media/tiny_mce/tiny_mce.js')
+
+TINYMCE_DEFAULT_CONFIG = {
+    'plugins' : "pagebreak, style, layer, table, save, advhr, advimage, advlink, emotions, iespell, inlinepopups, preview, media, searchreplace, print, contextmenu, paste, directionality, fullscreen, noneditable, visualchars, nonbreaking, xhtmlxtras, template, wordcount, advlist, autosave, pagebreak",
+    'theme': "advanced",
+    'theme_advanced_buttons1' : "bold, italic, underline, strikethrough, |, justifyleft, justifycenter, justifyright, justifyfull, fontselect, fontsizeselect, fullscreen, code,|, preview, image, media",
+    'theme_advanced_buttons2' : "table,|, bullist, numlist, |, outdent, indent, blockquote, |, undo, redo, |, link, unlink, |, forecolor, backcolor, |, pagebreak, paste",
+    'theme_advanced_toolbar_location' : "top",
+    'theme_advanced_toolbar_align' : "left",
+    'width': '80%',
+    'height': '400'
+}
+
+# TINYMCE_SPELLCHECKER = False
+# TINYMCE_COMPRESSOR = False
+
