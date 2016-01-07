@@ -2,10 +2,9 @@ from django.contrib import admin
 
 from .models import Post
 
-
-class AwesomeAdmin(admin.ModelAdmin):
-  prepopulated_fields = {"slug": ('title',)} 
-
+class ArticleAdmin(admin.ModelAdmin):
+  prepopulated_fields = {"slug": ('title',)}
+  search_fields = ['text']
 
 # Syntax for importing from the blog_app:
 #from .models import ModelName
@@ -26,4 +25,4 @@ class AwesomeAdmin(admin.ModelAdmin):
 
 # Syntax for registering models for the admin section of the project
 # (This line goes last.)
-admin.site.register(Post, AwesomeAdmin)
+admin.site.register(Post, ArticleAdmin)

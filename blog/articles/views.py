@@ -17,11 +17,7 @@ def index_all(request):
 
 def detail(request, slug):
   post = get_object_or_404(Post, slug=slug)
-  # comments = Comment.objects.
   return render(request, "articles/detail.html", {'post': post})
-    # try:
-    #   post = Post.objects.get(slug=slug)
-    # except Post.DoesNotExist:
-    #   raise Http404("oops, this page doesn't exist. Maybe try another?")
+
 def resources(request):
   return render(request, "resources.html")

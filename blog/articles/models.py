@@ -19,18 +19,6 @@ class Post(models.Model):
   def __unicode__(self):
     return self.title
 
-class Comment(models.Model):
-  text = models.CharField(max_length=400)
-  author = models.CharField(max_length=40)
-  date = models.DateTimeField(auto_now_add=True)
-  post = models.ForeignKey(Post)
-
-  def publish(self):
-    self.save()
-
-  def __unicode__(self):
-    return self.text
-
 # Create your models here.
 # sample model syntax:
 
