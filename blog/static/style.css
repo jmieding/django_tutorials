@@ -21,8 +21,8 @@
 
 body {
 	overflow-x: hidden;
-	background: white;
-	font-family: neuton;
+	background: #f5f5f5;
+	font-family: 'Neuton', serif;
 }    
 
 div ul {
@@ -37,19 +37,14 @@ a {
 								/* 2) HEADER */
 
 header {
-	height: 250px;
+	height: 27em;
 	display: block;
 	float: none;
 	position: relative;
-	background-image: url('/static/blog_pics/canyon1.jpg');
+	background-image: url('/static/blog_pics/tree_field.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
-	background-position: 0 30%;
-}
-
-header.desaturate {
-	filter: grayscale(100%);
-	-webkit-filter: grayscale(100%);
+	background-position: 0 65%;
 }
 
 @media (max-width: 768px) {
@@ -82,6 +77,7 @@ header.desaturate {
 
 .navbar-toggle {
 	float: none;
+	border-color: white;
 }
 
 .icon-bar {
@@ -92,28 +88,32 @@ header.desaturate {
 	float: none;
 	margin: 0 auto;
 	display: table;
-  background-color: none;
   color: white;
 }
 
-.navbar-nav > li > a {
-	font-family: montserrat;
+.navbar-nav li > a {
+	font-family: 'Montserrat', sans-serif;
 	font-size: 1.25em;
 	color: white;
-	border-radius: 8px 8px 0 0;
-	transition: background-color .3s;
-	-webkit-transition: background-color .3s;
+	border-radius: 8px;
+	transition: all .3s;
+	-webkit-transition: all .3s;
 }
 
-.active {
-	background-color: black;
-	border-radius: 8px 8px 0 0;
+@media (min-width: 768px) {
+	.navbar-nav li > a {
+		color: white;
+		border-radius: 8px 8px 0 0;
+	}
 }
 
-.navbar .navbar-nav li > a:active, .navbar .navbar-nav li > a:hover, .navbar .navbar-nav li > a:focus {
+.navbar-nav li > a:hover {
 	background-color: black;
 	border-color: black;
-/*	font-weight: bold;*/
+}
+
+.tab-nav-button { /* Activated by JavaScript. See script.js. */
+	background-color: black;
 }
 
 
@@ -126,18 +126,17 @@ header.desaturate {
 	height: 100%;
 }
 
-.post-heading {
-	font-family: montserrat;
+.post-heading a{
+	font-family: 'Montserrat', sans-serif;
 	font-size: 1.5em;
-	/*font-weight: bold;*/
 	margin-top: 3%;
+	text-decoration: none;
+	transition: color .3s;
+	-webkit-transition: color .3s;
 }
 
 .post-heading a:hover {
-	color: #e68800;
-	text-decoration: none;
-	transition: color .2s;
-	-webkit-transition: color .2s;
+	color: rgb(30, 160, 190);
 }
 
 article {
@@ -156,7 +155,6 @@ article {
 }
 
 .text-info {
-	font-family: neuton; 
 	font-size: .9em;
 	margin: auto;
 	padding: 5px;
@@ -165,23 +163,12 @@ article {
 
 .text-body {
 	margin-top: -3%;
-	font-family: 'Neuton'; 
 	margin-bottom: 5%;
 	text-align: right;
 }
 
-.image-posts {
-	border-radius: 5%;
-	background: 50% 50% no-repeat;
-	width: 100%;
-	max-height: 300px;
-	margin: 25px 5px 3px 0;
-	background-size: cover;
-}
-
-.image-posts.desaturate {
-	filter: grayscale(100%);
-	-webkit-filter: grayscale(100%);
+p.text-body a {
+	color: rgb(30, 160, 190);
 }
 
 hr {
@@ -192,28 +179,18 @@ hr {
 	background-color: black;
 }
 
-.btn {
+.expand {
 	border-radius: 5px;
 	background-color: white;
 	border: black solid 1px;
 }
 
-.btn:hover, .btn:active {
+.expand:hover, .expand:active {
 	color: white;
 	background-color: black;
 	border-color: black;
 	transition: background-color 1.2s;
 	-webkit-transition: background-color 1.2s;
-}
-
-#comments {
-	font-family: montserrat;
-	margin-top: 5%;
-	font-size: 1.1em;
-}
-
-#comments input {
-	font-family: neuton;
 }
 
 .pager-bottom, .pager {
@@ -229,9 +206,7 @@ hr {
 	background-color: black;
 }
 
-
 								/* b. Sidebar */
-
 
 .profile-pic-sidebar {
 	float: none;
@@ -240,21 +215,27 @@ hr {
 }
 
 #social-icons {
-	vertical-align: middle;
-	text-align: center;
+	margin-top: 10px;
 }
 
-#social-icons > a > img {
-	width: 2.25em;
-	margin: 2%;
+#social-icons a {
+	color: white;
+	background-color: black;
+	border: black solid 1px;
+	height: 55%;
+	padding: 10px;
 }
 
-#social-icons > a > img:hover {
+#social-icons a:hover {
+	color: black;
+	background-color: white;
+	transition: background-color 1s;
+	-webkit-transition: background-color 1s;
 }
 
 .panel-heading {
 	text-transform: uppercase;
-	font-family: montserrat, sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	font-weight: bold;
 	font-size: 1.5em;
 	border-top: 1px black;
@@ -266,7 +247,6 @@ hr {
 }
 
 .sidebar li a {
-	font-family: neuton;
 	font-size: 1.2em;
 }
 
@@ -284,6 +264,10 @@ hr {
 		margin-left: 0;
 		margin-top: 50px;
 	}
+}
+
+.sidebar ul li {
+	background: #f5f5f5;
 }
 
 .sidebar ul > li > a:hover {
@@ -304,30 +288,27 @@ hr {
 								/* 5) FOOTER */
 
 .footer {
-	background-color: /*#E9E9E9*/ white;
+	background: #f5f5f5;;
 	margin: 10px auto;
 }
 
 								/*RESOURCES PAGE*/
 
 #resources {
+  font-family: 'Montserrat', sans-serif;
 }
 
-@media (min-width: 767px) {
-	#resources {
-	}
-}
-
-#resources h4 {
-	font-family: montserrat;
+#resources ul p {
+  font-family: 'Neuton', serif;
 }
 
 #resources a {
-	font-size: 1.2em;
-	font-family: montserrat;
+  font-size: 1.2em;
 }
 
 #resources a:hover {
-	color: #e68800;
-	text-decoration: none;
+  color: #669900;
+  text-decoration: none;
+  transition: color .2s;
+  -webkit-transition: color .2s;
 }
