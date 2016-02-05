@@ -17,12 +17,13 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 from django.contrib.flatpages import views
-# from django.views.generic import TemplateView
+from django.views.generic import TemplateView
 
 urlpatterns = [
-    url(r'^articles/', include('articles.urls')),
-    url(r'^admin/', include(admin.site.urls)),
     url(r'^$', 'articles.views.home'),
+    url(r'^articles/', include('articles.urls')),
+    url(r'^projects.html', TemplateView.as_view(template_name='projects.html')),
     url(r'^resources/$', views.flatpage, {'url': '/resources/'}, name='resources'),
-    #url(r'^resources.html$', TemplateView.as_view(template_name='resources.html')),
+    #url(r'^contact.html', TemplateView.as_view(template_name='contact.html')),
+    url(r'^admin/', include(admin.site.urls)),
 ]

@@ -1,0 +1,49 @@
+{% extends 'template.html' %}
+{% load staticfiles %}
+{% block app %}
+
+<link href="{% static 'projects.css' %}" rel="stylesheet" type="text/css" />
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-12">
+      <h2 class="page-header">Live Sites/Web Apps
+      </h1>
+    </div>
+  </div>
+  <div class="row projects">
+    
+    <div class="col-md-4 portfolio-item">
+      <a href="https://sheltered-crag-66907.herokuapp.com" target="_blank">
+        <img class="img-responsive" src="{% static 'blog_pics/quote_generator.png' %}">
+      </a>
+      <h3>
+        <a href="https://sheltered-crag-66907.herokuapp.com" target="_blank">Quote Generator</a>
+      </h3>
+      <p>Returns some of my favorite quotes. HTML, CSS, and JavaScript.</p>
+    </div>
+    
+    <div class="col-md-4 portfolio-item">
+      <a href="https://pacific-atoll-56173.herokuapp.com" target="_blank">
+        <img class="img-responsive" src="{% static 'blog_pics/geolocation.png' %}">
+      </a>
+      <h3>
+        <a href="https://pacific-atoll-56173.herokuapp.com" target="_blank">Geolocation</a>
+      </h3>
+      <p>Displays current latitude & longitude. HTML, CSS, JavaScript, W3C Geolocation API, and the Google Maps JavaScript API</p>
+    </div>
+
+    <div class="col-md-4 portfolio-item">
+      <a href="#">
+        <img class="img-responsive" src="{% static 'blog_pics/coming_soon.png' %}">
+      </a>
+      <h3>
+        <a href="#" target="">Local Weather</a>
+      </h3>
+      <p>Displays Local Weather. HTML, CSS, JavaScript, and the OpenWeather API</p>
+    </div>
+
+  </div>
+</div>
+
+{% endblock app %}

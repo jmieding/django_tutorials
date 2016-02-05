@@ -1,0 +1,47 @@
+a:hover {
+  text-decoration: none;
+  color: rgb(30, 130, 150);
+  transition: .5s color;
+}
+
+.project-image {
+  border-radius: 5px;
+}
+
+.projects {
+  margin-right: 5%;
+  margin-left: 5%;
+}
+
+.projects h3, .projects p {
+  text-align: center;
+}
+
+.projects div {
+  margin-bottom: 7%;
+}
+
+.img-responsive {
+  border: solid black 1px;
+  border-radius: 5px;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
+}
+
+.projects a img:hover {
+  -webkit-transform: scale(.9);
+  -moz-transform: scale(.9);
+  -ms-transform: scale(.9);
+  -o-transform: scale(.9);
+  transform: scale(.9);
+}
+
+.page-header {
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 1%;
+  font-family: montserrat, sans-serif;
+  color: black;
+}
