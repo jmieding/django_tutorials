@@ -2,13 +2,10 @@
 
 {% block main %}
 
-
-
 <article>
-<h1 style="font-family: montserrat">Index</h1>
 {% for post in posts %}
     
-  <div>
+  <div id="outside">
     <!-- Post Title -->
     <p class="post-heading">
       <a href="{% url 'detail' post.slug %}">{{post.title}}</a>
@@ -18,16 +15,21 @@
     <!--Post Information-->
     <div class="row">
       <div class="col-sm-12 col-md-12">
-        <p class="text-info">{{post.published_date |date:"N d, Y" }} | Categories: <a href="#">XXX</a></p>
+        <p class="text-info">
+          {{post.published_date |date:"N d, Y" }} | Categories: 
+          {% for category in post.categories.all %}
+          <a href="#">{{ category }}</a>
+          {% endfor %}
+        </p>
       </div>
     </div>
     <hr>
 
     <!--Post Body-->
     <p class="text-body">
-      {{ post.text | safe | truncatewords_html:20}}
+      {{ post.text | safe | truncatewords_html:30}}
     </p>
-    <a href="{% url 'detail' post.slug %}"><button class="btn">More</button></a>
+    <a href="{% url 'detail' post.slug %}"><button class="btn expand">More</button></a>
 
   </br></br>
   </div>

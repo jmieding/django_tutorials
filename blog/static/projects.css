@@ -4,6 +4,11 @@ a:hover {
   transition: .5s color;
 }
 
+.white {
+  background: white;
+  margin-top: -20px;
+}
+
 .project-image {
   border-radius: 5px;
 }
@@ -43,5 +48,5 @@ a:hover {
   margin-right: 5%;
   margin-top: 1%;
   font-family: montserrat, sans-serif;
-  color: black;
+  color:rgb(0,100,120);
 }

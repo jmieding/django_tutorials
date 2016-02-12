@@ -1,73 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>    
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="The Personal Blog of James Mieding">
-  <meta name="author" content="James Mieding">
-  <title>The Personal Blog of James Mieding</title>
- 
-							<!-- CSS/Javascript files -->
-  {% load staticfiles %}
-  
-  <link href="{% static 'bootstrap-3.3.4-dist/css/bootstrap.css' %}" rel="stylesheet" type="text/css" />
-  <link href="{% static 'style.css' %}" rel="stylesheet" type="text/css" />
-  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Neuton' rel='stylesheet' type='text/css'>
- 
-  <script type="text/javascript" src="{% static 'tiny_mce.js'  %}"></script>
-  <script type="text/javascript" src="{% static 'jquery-2.1.4.min.js' %}"></script>
-  <script type="text/javascript" src="{% static 'bootstrap-3.3.4-dist/js/bootstrap.min.js' %}"></script>
-  <script type="text/javascript" src="{% static 'script.js'  %}"></script>
-</head>
-
-
-<body>
-	
-							<!--Header Image-->
-<header class="desaturate">
-</header>
-
-  <!---Navigation-->						
-<nav class="navbar" role="navigation">
-  
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#ex1" aria-expanded="false">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-  </div>
-  
-  <div class="collapse navbar-collapse" id="ex1">
-    <ul class="nav navbar-nav">
-      
-      <li><a href="/"><img src="{% static 'blog_pics/home_icon.png' %}" height="17px"></a>
-      </li>
-      
-      <li><a href="{% url 'index_five' %}" id="articles">Articles</a>
-      </li>
-
-      <li>
-        <a href="#">Projects</a>
-      </li>
-
-      <li>
-        <a href="{% url 'resources' %}">Resources</a>
-      </li>
-
-      <li>
-        <a href="#">Contact</a>
-      </li>
-    </ul>
-  </div>
-
-</nav>
+{% extends 'template.html' %}
+{% load staticfiles %}
+{% block app %}
 
 <!-- MAIN CONTENT -->
 <div class="container-fluid">
-  <div class="row background">   
+  <div class="row">   
     <div class="col-sm-9">
   
 	<!--Post Content-->
@@ -76,53 +13,55 @@
     </div>
   
 <!-- SIDEBAR -->
-  <div class="col-sm-3">
-    <div class="sidebar">
+    <div class="col-sm-3">
+      <div class="sidebar">
 
-      <div>
-        <img src="{% static 'blog_pics/headshot_bw_circle.gif' %}" class="profile-pic-sidebar" />
-      </div>
+          <div>
+            <img src="{% static 'blog_pics/headshot_bw_circle.gif' %}" class="profile-pic-sidebar" />
+          </div>
 
-    <!--Social Icons: Twitter/ LinkedIn -->
-      <div id="social-icons">
-        <a href="https://github.com/jmieding?tab=repositories" target="_blank"><img src="{% static 'blog_pics/giticon.png' %}" /></a>
-        <a href="http://bit.ly/1YJ7IMf" target="_blank"><img src="{% static 'blog_pics/linkedin.png' %}"  /></a>
-        <a href="https://twitter.com/James_Mieding" target="_blank"><img src="{% static 'blog_pics/twittericon.png' %}" /></a>
-      </div>
-    
-    <!-- Search Bar -->
+      <!--Social Icons: Twitter/ LinkedIn -->
+          <div id="social-icons">
+            <a href="http://bit.ly/1YJ7IMf" target="_blank" class="btn btn-social-icon btn-lg btn-linkedin" id="linkedin"><span class="fa fa-lg fa-linkedin"></span></a>
+            <a href="https://github.com/jmieding?tab=repositories" target="_blank" class="btn btn-social-icon btn-lg btn-github" id="github"><span class="fa fa-lg fa-github"></span></a>
+            <a href="https://twitter.com/James_Mieding" target="_blank" class="btn btn-social-icon btn-lg btn-twitter" id="twitter"><span class="fa fa-lg fa-twitter"></span></a>
+          </div>
+      
+      <!-- Search Bar -->
 
-    <!--Popular Articles-->
-      <div id="popular-posts">
-        <h4 class="panel-heading"><a href="#">Popular</a></h4>   
-    	  <ul class="list-group">
-    	    <li class="list-group-item"><a href="#">1. Post No. 1</a></li>
-          <li class="list-group-item"><a href="#">2. Post No. 2</a></li>
-          <li class="list-group-item"><a href="#">3. Post No. 3</a></li>
-    	  </ul>
-      </div>
+      <!--Popular Articles-->
+        <div id="popular-posts">
+          <h4 class="panel-heading"><a href="#">Popular</a></h4>   
+      	  <ul class="list-group">
+      	    <li class="list-group-item"><a href="#">1. Post No. 1</a></li>
+            <li class="list-group-item"><a href="#">2. Post No. 2</a></li>
+            <li class="list-group-item"><a href="#">3. Post No. 3</a></li>
+      	  </ul>
+        </div>
 
-      </hr>
+        </hr>
 
-    <!--Categories-->
-      <div id="categories">
-        <h4 class="panel-heading"><a href="#">Categories</a></h4>			
-    	  <ul class="list-group">
-          <li class="list-group-item"><a href="#">Python</a></li>
-          <li class="list-group-item"><a href="#">Django</a></li>
-          <li class="list-group-item"><a href="#">HTML/CSS/JS</a></li>
-    	  </ul>
-      </div>
+      <!--Categories-->
+        <div id="categories">
+          <h4 class="panel-heading"><a href="#">Categories</a></h4>			
+      	  <ul class="list-group">
+            <li class="list-group-item"><a href="articles/categories/python/">Python</a></li>
+            <li class="list-group-item"><a href="articles/categories/python/">Django</a></li>
+            <li class="list-group-item"><a href="articles/categories/python/">HTML/CSS/JS</a></li>
+            <li class="list-group-item"><a href="articles/categories/python/">General</a></li>
+            <li class="list-group-item"><a href="articles/categories/python/">Deployment</a></li>
+      	  </ul>
+        </div>
 
-    <!-- Twitter Feed -->
-      <div id="twitter">
-        <a class="twitter-timeline" href="https://twitter.com/James_Mieding" data-widget-id="671483245431754757" data-chrome="nofooter noscrollbar">Tweets by @James_Mieding</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-      </div>
-		</div>
-  </div>
-  </div>	
-  </div>
-</div>			
+      <!-- Twitter Feed -->
+        <div id="twitter">
+          <a class="twitter-timeline" href="https://twitter.com/James_Mieding" data-widget-id="671483245431754757" data-chrome="nofooter noscrollbar">Tweets by @James_Mieding</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        </div>
+
+		  </div> <!--sidebar-->
+    </div> <!--col-sm-3-->
+  </div> <!--row background -->
+</div> <!--container-fluid-->
 
 
 	
@@ -132,5 +71,4 @@
     <hr />
     <p class="text-center text-footer">Copyright © James Mieding 2015. All rights reserved.</p>
   </div>
-</body>
-</html>
+{% endblock app %}

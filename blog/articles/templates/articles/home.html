@@ -5,20 +5,23 @@
     <!--Post Header-->
   <article>
     
-    <div>
+    <div style="text-align:center;margin-bottom:10%">
       <!-- Post Title -->
-      <p class="post-heading">
+      <p class="post-heading" style="font-size:1.5em">
         <a href="{% url 'detail' most_recent_post.slug %}">{{most_recent_post.title}}</a>
       </p>
-      <hr>
       
       <!--Post Information-->
       <div class="row">
         <div class="col-sm-12 col-md-12">
-          <p class="text-info">{{most_recent_post.published_date |date:"N d, Y" }} | Categories: <a href="#">XXX</a></p>
+          <p class="text-info">
+          {{most_recent_post.published_date |date:"N d, Y" }} | Categories: 
+          {% for category in most_recent_post.categories.all %}
+          <a href="#">{{ category }}</a>
+          {% endfor %}
+          </p>
         </div>
       </div>
-      <hr>
     </div>
 
   <!--Post Body-->
@@ -26,4 +29,4 @@
 
   </article>
 
-{% endblock %}
+{% endblock main %}

@@ -20,10 +20,22 @@
 								/* 1) GENERAL STYLES */
 
 body {
+	height: 100%;
+	width: 100%;
+	background: white; /*url('blog_pics/Colorado1_bw.jpg');*/
+	background-attachment: fixed;
+	background-position: 20% 30%;
 	overflow-x: hidden;
-	background: #f5f5f5;
 	font-family: 'Neuton', serif;
-}    
+}
+
+/*#body-layer {
+	background: rgba(0,0,0,0.5);
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}*/
 
 div ul {
 	margin-right: 10px;
@@ -33,87 +45,101 @@ a {
 	color: black;
 }
 
-
 								/* 2) HEADER */
-
-header {
-	height: 27em;
-	display: block;
-	float: none;
-	position: relative;
-	background-image: url('/static/blog_pics/tree_field.jpg');
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: 0 65%;
-}
-
-@media (max-width: 768px) {
-	header {
-		height: 150px;
-	}
-}
-
-@media (max-width: 505px) {
-	header {
-		height: 100px;
-	}
-}
-
 
 
 								/* 3) NAVIGATION */
 
 .navbar {
-	margin-top: -51px;
-	border-color: black transparent;
-	background-color: rgba(0, 0, 0, 0.4);
-	border-radius: 0px;
+	background: black;
+	background-position: 40% 40%;
+	color: white;
+	height: 175px;
+	margin-bottom: 0;
 }
 
-.navbar-header {
-	margin: 0 auto;
-	text-align: center;
+.navbar-header, .navbar-collapse {
+	margin-top: 60px;
 }
 
 .navbar-toggle {
 	float: none;
-	border-color: white;
+	border: solid 2px white;
+	left: 50%;
+	transform: translate(-15px, 0);
 }
 
 .icon-bar {
 	background-color: white;
 }
 
-.navbar-nav {
-	float: none;
-	margin: 0 auto;
-	display: table;
-  color: white;
-}
-
-.navbar-nav li > a {
-	font-family: 'Montserrat', sans-serif;
-	font-size: 1.25em;
+.navbar-brand {
+	font-size: 2.5em;
+	margin-left: 20px !important;
+	font-family: 'Nothing you could do';
 	color: white;
-	border-radius: 8px;
-	transition: all .3s;
-	-webkit-transition: all .3s;
+	display: none;
 }
-
+.navbar-brand:hover {
+	color: white;
+}
 @media (min-width: 768px) {
-	.navbar-nav li > a {
-		color: white;
-		border-radius: 8px 8px 0 0;
+	.navbar-brand {
+		display: inline-block;
+	}
+}
+@media (min-width: 992px) {
+	.navbar-brand {
+		font-size: 3.5em;
 	}
 }
 
-.navbar-nav li > a:hover {
-	background-color: black;
-	border-color: black;
+.navbar-nav {
+	float: none;
+	margin: 0 auto;
+	background: black;
+	max-width: 50%;
+	border: black solid 3px;
+}
+@media (min-width: 768px) {
+	.navbar-nav {
+		float: right;
+		max-width: none;
+		background: transparent;
+		border: none;
+	}
+}
+@media (min-width: 992px) {
+	.navbar-nav {	
+		margin-right: 5%;
+	}
+}
+
+.navbar-nav li a {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 1em;
+	color: white;
+	border: 5px solid transparent;
+	text-align: center;
+	background: black;
+}
+.navbar-nav li a:hover {
+	background: white;
+	color: black;
+}
+@media (min-width: 768px) {
+	.navbar-nav li a {
+		background: transparent;
+	}
+	.navbar-nav li a:hover {
+		background: transparent;
+		border-color: white transparent transparent transparent;
+		color: white;
+	}
 }
 
 .tab-nav-button { /* Activated by JavaScript. See script.js. */
-	background-color: black;
+	border: solid red 3px;
 }
 
 
@@ -121,44 +147,50 @@ header {
 								
 								/* a. Main Content */
 
-.background {
-	margin-top: -25px;
-	height: 100%;
+.col-sm-9 {
+	background: white;
+	border-right: solid black 1px;
 }
 
-.post-heading a{
+.post-heading a {
 	font-family: 'Montserrat', sans-serif;
-	font-size: 1.5em;
-	margin-top: 3%;
+	font-size: 1.9em;
 	text-decoration: none;
+	color:rgb(0,100,120); /*blueish*/
 	transition: color .3s;
 	-webkit-transition: color .3s;
 }
 
 .post-heading a:hover {
-	color: rgb(30, 160, 190);
+	color:gray;
 }
 
 article {
-	margin-top: 5%;
-	margin-right: 5em;
-	margin-left: 3em;
-	z-index: 2;
+	margin: 0;
 	position: relative;
+	padding: 2em;
 }
-
-@media (max-width: 767px) {
+@media (min-width: 767px) {
 	article {
-		margin-right: 3em;
-		margin-top: 10%;
+		margin-right: 1em;
+		margin-left: 1em;
+		margin-top: 2em;
+		padding: 3em;
 	}
+}
+article p {
+	color: black;
 }
 
 .text-info {
-	font-size: .9em;
+	font-size: 1.1em;
 	margin: auto;
 	padding: 5px;
 	color: black;
+}
+
+.text-info a {
+	color: rgb(200,0,0);
 }
 
 .text-body {
@@ -167,8 +199,22 @@ article {
 	text-align: right;
 }
 
-p.text-body a {
-	color: rgb(30, 160, 190);
+article p {
+	color: black;
+}
+
+article p span a {
+	color: rgb(30, 160, 190); /*teal*/
+}
+
+article p span a:hover{
+	color: rgb(255,60,60); /*reddish*/
+	text-decoration: none;
+}
+
+article img {
+	height: 90%;
+	width: 90%;
 }
 
 hr {
@@ -185,12 +231,12 @@ hr {
 	border: black solid 1px;
 }
 
-.expand:hover, .expand:active {
+.expand:hover, .expand:active, ul .next a:hover {
 	color: white;
 	background-color: black;
 	border-color: black;
-	transition: background-color 1.2s;
-	-webkit-transition: background-color 1.2s;
+	transition: background-color 1s;
+	-webkit-transition: background-color 1s;
 }
 
 .pager-bottom, .pager {
@@ -201,10 +247,14 @@ hr {
 	max-width: 75px;
 }
 
-.pager .next a:active, .pager .next a:hover {
-	color: white;
-	background-color: black;
+ul .next a {
+	border: black solid 1px;
 }
+
+#outside {
+	margin-bottom: 5%;
+}
+
 
 								/* b. Sidebar */
 
@@ -246,12 +296,12 @@ hr {
 	color: black;
 }
 
-.sidebar li a {
-	font-size: 1.2em;
-}
-
 .sidebar {
 	margin-top: 10%;
+}
+
+.sidebar li a {
+	font-size: 1.2em;
 }
 
 .sidebar .panel-heading, .sidebar ul li, .sidebar div {
@@ -266,17 +316,15 @@ hr {
 	}
 }
 
-.sidebar ul li {
-	background: #f5f5f5;
-}
-
 .sidebar ul > li > a:hover {
 	color: black;
 	text-decoration: underline;
 }
 
-#categories {
+#categories, #popular-posts {
 	margin-bottom: 10%;
+	border-radius: 10px;
+	background: white;
 }
 
 .list-group-item {
@@ -288,14 +336,23 @@ hr {
 								/* 5) FOOTER */
 
 .footer {
-	background: #f5f5f5;;
-	margin: 10px auto;
+	margin: 0 auto;
+	background: none;
 }
 
 								/*RESOURCES PAGE*/
 
 #resources {
   font-family: 'Montserrat', sans-serif;
+}
+
+#resources h2 {
+	text-align: center;
+	color:rgb(0,100,120);
+}
+
+#resources ul {
+	margin-bottom: 5%;
 }
 
 #resources ul p {
@@ -307,8 +364,8 @@ hr {
 }
 
 #resources a:hover {
-  color: #669900;
+  color: rgb(200,0,0);
   text-decoration: none;
-  transition: color .2s;
-  -webkit-transition: color .2s;
+  transition: color .1s;
+  -webkit-transition: color .1s;
 }
