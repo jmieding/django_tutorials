@@ -1,0 +1,19 @@
+{% extends 'template.html' %}
+{% load staticfiles %}
+{% block app %}
+<div style="margin-left:25%;margin-top: 25%">
+<form action="." method="post">
+  {% csrf_token %}
+  {{ form }}
+  <input type="submit">
+  {% for post in posts %}
+  {{ post }}
+  {% endfor %}
+</div>
+
+<div>
+  About James:
+  <div>What I'm reading: The Billion Dollar Spy</div>
+  <div>What I'm listening to: Code Winds, Talk Python to Me, B</div>
+  <div></div>
+{% endblock %}
