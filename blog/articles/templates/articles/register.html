@@ -1,0 +1,43 @@
+{% extends 'articles/base.html' %}
+{% load staticfiles %}
+{% block main %}
+
+<form action="." method="post">
+  {% csrf_token %}
+  <b>Name:</b><br>
+  {{ form.username }} 
+    {% for err in form.username.errors %}
+      <span>{{err}}<span>
+    {% endfor %}
+  <br><br>
+
+  <b>Email:</b><br>
+  {{ form.password }} 
+    {% for err in form.password.errors %}
+      <span>{{err}}<span>
+    {% endfor %}
+  <br><br>
+
+  <b>Message:</b><br>
+  {{ form.message }} 
+    {% for err in form.message.errors %}
+      <span>{{err}}<span>
+    {% endfor %}
+  <br><br>
+
+  <b>Botcheck:</b><br>
+  {{ form.botcheck }} 
+    {% for err in form.botcheck.errors %}
+      <span>{{err}}<span>
+    {% endfor %}
+    {% if botfailure %}
+      <span>{{botfailure}}<span>
+    {% endif %}
+  
+  <input type="submit" value="Submit" id="submit">
+</form>
+
+
+{{ form.as_p }}
+
+{% endblock main %}

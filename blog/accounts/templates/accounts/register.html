@@ -1,0 +1,41 @@
+{% extends 'template.html' %}
+{% load staticfiles %}
+{% block app %}
+<div style="margin: 5% 40% 0 40%;margin-top:5%">
+
+  <h4 style="font-family:Montserrat;text-align:center">Register:</h4>
+  <br>
+  <form action="." method="post">
+    {% csrf_token %}
+    <b>Username:</b><br>
+    {{ form.username }}
+      {% for err in form.username.errors %}
+        <span>{{err}}<span>
+      {% endfor %}
+      <br><br>
+
+    <b>Password:</b><br>
+    {{ form.password }}
+      {% for err in form.password.errors %}
+        <span>{{err}}<span>
+      {% endfor %}
+      <br><br>
+
+    <b>Password (again):</b><br>
+    {{ form.password_again }}
+      {% for err in form.password_again.errors %}
+        <span>{{err}}<span>
+      {% endfor %}
+      <br><br>
+
+    <b>Email:</b><br>
+    {{ form.email }}
+      {% for err in form.email.errors %}
+        <span>{{err}}<span>
+      {% endfor %}
+      <br><br>
+
+    <input type="submit" value="Submit" id="submit">
+  </form>
+</div>
+{% endblock app %}

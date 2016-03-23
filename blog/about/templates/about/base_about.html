@@ -1,19 +1,58 @@
-{% extends 'template.html' %}
+{% extends 'base.html' %}
 {% load staticfiles %}
 {% block app %}
-<div style="margin-left:25%;margin-top: 25%">
-<form action="." method="post">
-  {% csrf_token %}
-  {{ form }}
-  <input type="submit">
-  {% for post in posts %}
-  {{ post }}
-  {% endfor %}
+<link href="{% static 'about.css' %}" rel="stylesheet" type="text/css" />
+
+<div class="container-fluid">
+  <div class="col-sm-6" id="about">
+    <br>
+    <p>Thanks for visiting.</p>
+    <p><b>About Me:</b> 
+    <img src="{% static 'blog_pics/headshot_bw_circle.gif' %}" />
+    My 9-5 is spent reviewing and negotiating contracts for oil and gas companies, so I think it's fair to say I'm not a typical software developer. I started dabbling with software in May 2015, and I was quickly blown away by how much could be accomplished with a terminal window and some basic syntax. I've been learning on my own ever since, mostly focusing on Python, Django, Javascript, and of course HTML/CSS technologies. You're looking at my first dynamic (MVC) website built from scratch.</p>
+    <br>
+    <p>Here's what I'm doing outside of my 9-5 that gets me excited:</p>
+    <p><b>What I'm currently reading:</b> Effective Python, Blood Meridian, The Practice of Practice</p>
+    <p><b>What I'm listening to:</b> Code Winds(Podcast), Talk Python to Me(Podcast)</p>
+    <p><b>What I'm building:</b> Web app that displays local weather, Javascript Calculator</p>
+  </div>
+  <div class="col-sm-5" id="contact">
+    <p>Use this form to get in touch:<p>
+    <form action="." method="post">
+      {% csrf_token %}
+      <b>Name:</b><br>
+      {{ form.name }} 
+        {% for err in form.name.errors %}
+          <span>{{err}}<span>
+        {% endfor %}
+      <br><br>
+
+      <b>Email:</b><br>
+      {{ form.email }} 
+        {% for err in form.email.errors %}
+          <span>{{err}}<span>
+        {% endfor %}
+      <br><br>
+
+      <b>Message:</b><br>
+      {{ form.message }} 
+        {% for err in form.message.errors %}
+          <span>{{err}}<span>
+        {% endfor %}
+      <br><br>
+
+      <b>Botcheck:</b><br>
+      {{ form.botcheck }} 
+        {% for err in form.botcheck.errors %}
+          <span>{{err}}<span>
+        {% endfor %}
+        {% if botfailure %}
+          <span>{{botfailure}}<span>
+        {% endif %}
+      
+      <input type="submit" value="Submit" id="submit">
+    </form>
+  </div>
 </div>
 
-<div>
-  About James:
-  <div>What I'm reading: The Billion Dollar Spy</div>
-  <div>What I'm listening to: Code Winds, Talk Python to Me, B</div>
-  <div></div>
-{% endblock %}
+{% endblock app %}

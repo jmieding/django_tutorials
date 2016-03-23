@@ -20,10 +20,11 @@ from django.contrib.flatpages import views
 from django.views.generic import TemplateView
 
 urlpatterns = [
-    url(r'^$', 'articles.views.home'),
+    url(r'^$', 'articles.views.index_five'),
     url(r'^articles/', include('articles.urls')),
     url(r'^projects.html', TemplateView.as_view(template_name='projects.html')),
     url(r'^resources/$', views.flatpage, {'url': '/resources/'}, name='resources'),
-    #url(r'^contact.html', TemplateView.as_view(template_name='contact.html')),
+    url(r'^about/', include('about.urls'), name='resources'),
+    url(r'^accounts/', include('registration.backends.default.urls')),
     url(r'^admin/', include(admin.site.urls)),
 ]

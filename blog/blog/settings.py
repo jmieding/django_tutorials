@@ -37,7 +37,10 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'articles',
+    'about',
+    'accounts',
     'tinymce',
+    'registration',
     'django.contrib.sites',
     'django.contrib.flatpages',
     'django.contrib.admin',
@@ -93,7 +96,7 @@ DATABASES = {
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Chicago'
 
 USE_I18N = True
 
@@ -105,26 +108,31 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
-
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
 
-STATIC_ROOT = os.path.join(BASE_DIR, "static_root")
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # TINYMCE_JS_ROOT = os.path.join(BASE_DIR, '/tinymce/')
-
 # TINYMCE_JS_URL = os.path.join(BASE_DIR, '/tinymce/media/tiny_mce/tiny_mce.js')
-
 TINYMCE_DEFAULT_CONFIG = {
     'plugins' : "pagebreak, style, layer, table, save, advhr, advimage, advlink, emotions, iespell, inlinepopups, preview, media, searchreplace, print, contextmenu, paste, directionality, fullscreen, noneditable, visualchars, nonbreaking, xhtmlxtras, template, wordcount, advlist, autosave, pagebreak",
     'theme': "advanced",
     'theme_advanced_buttons1' : "bold, italic, underline, strikethrough, |, justifyleft, justifycenter, justifyright, justifyfull, fontselect, fontsizeselect, fullscreen, code,|, preview, image, media",
-    'theme_advanced_buttons2' : "table,|, bullist, numlist, |, outdent, indent, blockquote, |, undo, redo, |, link, unlink, |, forecolor, backcolor, |, pagebreak, paste",
+    'theme_advanced_buttons2' : "table,|, bullist, numlist, |, outdent, indent, blockquote, |, undo, redo, |, link, unlink, |, forecolor, backcolor, |, pagebreak, paste, |, template",
     'theme_advanced_toolbar_location' : "top",
     'theme_advanced_toolbar_align' : "left",
     'width': '80%',
     'height': '400'
 }
 
-# TINYMCE_SPELLCHECKER = False
-# TINYMCE_COMPRESSOR = False
+ACCOUNT_ACTIVATION_DAYS = 5
+REGISTRATION_AUTO_LOGIN = True
+REGISTRATION_DEFAULT_FROM_EMAIL = "jamesmieding.com"
+REGISTRATION_EMAIL_HTML = True
+LOGIN_REDIRECT_URL = '/'
 
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# EMAIL_HOST = '127.0.0.1'
+# EMAIL_PORT = '587'

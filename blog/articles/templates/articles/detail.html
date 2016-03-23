@@ -1,21 +1,21 @@
-{% extends 'articles/base.html' %}
+{% extends 'articles/base_articles.html' %}
 
 {% block main %}
     
     <!--Post Header-->
   <article>
     
-    <div style="text-align:center;margin-bottom:10%">
+    <div style="text-align:center;margin-bottom:5%">
       <!-- Post Title -->
       <p class="post-heading" style="font-size:1.5em">
-        <a href="/articles/{{ post.slug }}/">{{post.title}}</a>
+        <a href="{% url 'detail' post.slug %}">{{post.title}}</a>
       </p>
       
       <!--Post Information-->
       <div class="row">
         <div class="col-sm-12 col-md-12">
           <p class="text-info">{{post.published_date |date:"N d, Y" }} | Categories: {% for category in post.categories.all %}
-          <a href="#">{{ category }}</a>
+          <a href="{% url 'category' category.slug %}">{{ category }}</a>
           {% endfor %}
           </p>
         </div>
@@ -24,7 +24,57 @@
 
     <!--Post Body-->
     <p class="text-body">{{post.text | safe}}</p>
+    <br>
+
+    <!--Comments-->
+    <hr>
+    <br>
+    <div id="comment">
+      {% if request.user.is_authenticated %}
+  
+        <p>Logged in as: <span style="font-weight:bold">{{ request.user }}.</span> <a style="color:#990000;" href="/accounts/logout/">Logout</a></p>
+
+        <form action="." method="post">
+          {% csrf_token %}
+
+          {{ form.text }}
+
+          {% if form.text.errors %}
+          {% for err in form.text.errors %}
+            <span>{{err}}<span>
+          {% endfor %}
+          {% endif %}
+          <br>
+          <input type="submit" value="Submit" id="submit">
+        </form>
+
+      {% else %}
+        Login to leave a comment.
+        <a style="color:#990000;" href="/accounts/login/">Login here</a>
+      {% endif %}
+    </div>
+
+    <h4 style="font-family:montserrat">Comments:</h4>
+    {% if post.comment_set.all %}
+      {% for comment in post.comment_set.all %}
+        {% if comment.author == "jtmieding" %}
+          <div class="comment-james">
+           <p>{{comment.author}} | {{comment.date}}<br>
+           </p>
+            <p>{{comment.text}}</p>
+          </div>
+        {% else %}
+          <div class="comment-visitor">
+           <p>{{comment.author}} | {{comment.date}}<br>
+           </p>
+            <p>{{comment.text}}</p>
+          </div>
+        {% endif %}
+      {% endfor %}
+    {% else %}
+      <p>No comments yet. Be the first...</p>
+    {% endif %}
 
   </article>
 
-{% endblock %}
+{% endblock main %}

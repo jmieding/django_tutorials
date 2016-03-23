@@ -1,0 +1,24 @@
+.contact, .about {
+  margin-top: 20px;
+}
+
+.about {
+  margin-left: 3%;
+}
+
+.about p {
+  text-align: left;
+  font-size: 1.1em;
+}
+
+img {
+  width:150px;
+  float: right;
+}
+
+#submit {
+  margin-bottom: 3%;
+  display: inline;
+  width: 100px;
+  margin-left: 20px;
+}

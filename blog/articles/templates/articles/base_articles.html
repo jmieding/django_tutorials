@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block app %}
+
+<!-- MAIN CONTENT -->
+<div class="container-fluid">
+  <div class="row">   
+    <div class="col-sm-9">
+  
+	<!--Post Content-->
+	  {% block main %}
+    {% endblock %}
+    </div>
+  
+<!-- SIDEBAR -->
+    <div class="col-sm-3">
+      <div class="sidebar">
+
+          <div>
+            <img src="{% static 'blog_pics/headshot_bw_circle.gif' %}" class="profile-pic-sidebar" />
+          </div>
+
+      <!--Social Icons: Twitter/ LinkedIn -->
+          <div id="social-icons">
+            <a href="http://bit.ly/1YJ7IMf" target="_blank" class="btn btn-social-icon btn-lg btn-linkedin" id="linkedin"><span class="fa fa-lg fa-linkedin"></span></a>
+            <a href="https://github.com/jmieding?tab=repositories" target="_blank" class="btn btn-social-icon btn-lg btn-github" id="github"><span class="fa fa-lg fa-github"></span></a>
+            <a href="https://twitter.com/James_Mieding" target="_blank" class="btn btn-social-icon btn-lg btn-twitter" id="twitter"><span class="fa fa-lg fa-twitter"></span></a>
+          </div>
+      
+      <!-- Search Bar -->
+
+      <!--Popular Articles-->
+        <div id="popular-posts">
+          <h4 class="panel-heading"><a href="#">Popular</a></h4>   
+      	  <ul class="list-group">
+      	    <li class="list-group-item"><a href="#">1. Post No. 1</a></li>
+            <li class="list-group-item"><a href="#">2. Post No. 2</a></li>
+            <li class="list-group-item"><a href="#">3. Post No. 3</a></li>
+      	  </ul>
+        </div>
+
+        </hr>
+
+      <!--Categories-->
+        <div id="categories">
+          <h4 class="panel-heading"><a href="#">Categories</a></h4>			
+      	  <ul class="list-group">
+            <li class="list-group-item"><a href="/articles/category/python/">Python</a></li>
+            <li class="list-group-item"><a href="/articles/category/django/">Django</a></li>
+            <li class="list-group-item"><a href="/articles/category/html-css-js/">HTML/CSS/JS</a></li>
+            <li class="list-group-item"><a href="/articles/category/general/">General</a></li>
+            <li class="list-group-item"><a href="/articles/category/deployment/">Deployment</a></li>
+      	  </ul>
+        </div>
+
+      <!-- Twitter Feed -->
+        <div id="twitter">
+          <a class="twitter-timeline" href="https://twitter.com/James_Mieding" data-widget-id="671483245431754757" data-chrome="nofooter noscrollbar">Tweets by @James_Mieding</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        </div>
+
+		  </div> <!--sidebar-->
+    </div> <!--col-sm-3-->
+  </div> <!--row background -->
+</div> <!--container-fluid-->
+
+
+	
+<!--FOOTER-->
+
+  <div class="container-fluid footer">
+    <hr />
+    <p class="text-center text-footer">Copyright © James Mieding 2015. All rights reserved.</p>
+  </div>
+{% endblock app %}

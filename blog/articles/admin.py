@@ -1,10 +1,17 @@
 from django.contrib import admin
 
-from .models import Post
+from .models import Post, Category, Comment
 
 class ArticleAdmin(admin.ModelAdmin):
   prepopulated_fields = {"slug": ('title',)}
   search_fields = ['text']
+  filter_horizontal = ['categories']
+
+class CategoryAdmin(admin.ModelAdmin):
+  model = Category
+
+class CommentAdmin(admin.ModelAdmin):
+  model = Comment
 
 # Syntax for importing from the blog_app:
 #from .models import ModelName
@@ -26,3 +33,5 @@ class ArticleAdmin(admin.ModelAdmin):
 # Syntax for registering models for the admin section of the project
 # (This line goes last.)
 admin.site.register(Post, ArticleAdmin)
+admin.site.register(Category, CategoryAdmin)
+admin.site.register(Comment, CommentAdmin)

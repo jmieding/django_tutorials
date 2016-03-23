@@ -3,10 +3,8 @@ from . import views
 from django.views.generic import TemplateView
 
 urlpatterns = [
-  url(r'^$', views.temp, name='about')
-    # url(r'^send/$', sendmail),
-    # url(r'^thankyou/$', TemplateView.as_view(template_name='thankyou.html'), name='thankyou'),
-    # url(r'^$', TemplateView.as_view(template_name='about.html'), name='about'),
+  url(r'^$', views.main, name='about'),
+  url(r'^thankyou/$', views.thankyou, name='thankyou'),
 ]
 
 # from django.conf import settings

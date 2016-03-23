@@ -1,0 +1,26 @@
+{% extends 'about/base_about.html' %}
+{% load staticfiles %}
+{% block app %}
+<link href="{% static 'about.css' %}" rel="stylesheet" type="text/css" />
+
+<div class="container-fluid">
+  <div class="col-sm-6" id="about">
+    <br>
+    <p>Thanks for visiting.</p>
+    <p><b>About Me:</b> 
+    <img src="{% static 'blog_pics/headshot_bw_circle.gif' %}" />
+    My 9-5 is spent reviewing and negotiating contracts for oil and gas companies, so I think it's fair to say I'm not a typical software developer. I started dabbling with software in May 2015, and I was quickly blown away by how much could be accomplished with a terminal window and some basic syntax. I've been learning on my own ever since, mostly focusing on Python, Django, Javascript, and of course HTML/CSS technologies. You're looking at my first dynamic (MVC) website built from scratch.</p>
+    <br>
+    <p>Here's what I'm doing outside of my 9-5 that gets me excited:</p>
+    <p><b>What I'm currently reading:</b> Effective Python, Blood Meridian, The Practice of Practice</p>
+    <p><b>What I'm listening to:</b> Code Winds(Podcast), Talk Python to Me(Podcast)</p>
+    <p><b>What I'm building:</b> Web app that displays local weather, Javascript Calculator</p>
+  </div>
+  <div class="col-sm-5 col-sm-offset-1" id="contact">
+    <div style="margin: 40% 20%;font-size:1.2em">
+      Perfect. Thanks for reaching out.
+    </div>
+  </div>
+</div>
+
+{% endblock app %}

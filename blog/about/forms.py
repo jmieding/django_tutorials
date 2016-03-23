@@ -1,9 +1,10 @@
 from django import forms
 
-# class EmailForm(forms.Form):
-#   name = forms.CharField(label="Your name", max_length=100)
-#   email = forms.EmailField(label="Your email", max_length=100)
-#   message = forms.CharField(label="Message", max_length=1000)
+class EmailForm(forms.Form):
+  name = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'required':True, 'size':30}))
+  email = forms.EmailField(max_length=50, widget=forms.TextInput(attrs={'required':True, 'size':30}))
+  message = forms.CharField(widget=forms.Textarea(attrs={'cols':70, 'rows':8, 'required':True}))
+  botcheck = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'required':True, 'placeholder':'Type \'NOTABOT\''}))
 
 
   #   def save(self):
